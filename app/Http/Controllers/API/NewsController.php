@@ -11,7 +11,7 @@ class NewsController extends Controller
 
     public function index()
     {
-        return News::with('author:id,name')->latest()->paginate(5);
+         return News::with(['author:id,name', 'tags:id,title'])->latest()->paginate(5);
     }
 
 
